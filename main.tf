@@ -3,15 +3,15 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "${var.prefix}-resources"
-  location = var.location
+resource "azurerm_resource_group" "Sabrina_RG" {
+  name     = "Sabrina_RG"
+  location = "francecentral"
 }
 
-resource "azurerm_storage_account" "example" {
-  name                     = "${var.prefix}storageacct"
-  resource_group_name      = azurerm_resource_group.example.name
-  location                 = azurerm_resource_group.example.location
+resource "azurerm_storage_account" "Sabrina_store" {
+  name                     = "sab-store"
+  resource_group_name      = azurerm_resource_group.Sabrina_RG.name
+  location                 = azurerm_resource_group.Sabrina_RG.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
